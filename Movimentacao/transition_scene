@@ -1,0 +1,84 @@
+.data 
+NEXT_STAGE_FILE: .string "nextstage.bin"
+BACKGROUND_NEXT_STAGE1_FILE: .string "transicao_fase1.bin"
+BACKGROUND_NEXT_STAGE2_FILE: .string "transicao_fase2.bin"
+BACKGROUND_NEXT_STAGE3_FILE: .string "transicao_fase3.bin"
+BACKGROUND_NEXT_STAGE4_FILE: .string "transicao_fase4.bin"
+
+SCENE_TRANSITION: .space 7808
+
+.text
+#### LOAD MSPACMAN ANIMATION #### 
+#{
+	addi a7 zero 1024
+	la a0, %BACKGROUND_NEXT_STAGE_FILE
+	add a1 zero zero
+	ecall
+
+	addi t0,a0,0	#obs: t0 = file descriptor
+	li a7,63
+	lI a1,0xFF000000
+	li a2,76800
+	ecall
+
+	addi a0,t0,0	#obs: t0 = file descriptor
+	li a7,57
+	ecall
+	
+	add t3 zero zero
+	add t2 zero zero
+	add t1 zero zero
+	add s3 zero zero
+		
+	PRINT_SCENE_LOOP:
+		addi t0 zero 68
+		beq t3 t0 END_PRINT_SCENE_LOOP
+		addi t0 zero 4
+		rem t4 t3 t0
+		beq t4 zero SET_VALUES_SCENE_MSPACMAN
+		jal zero PRINT_SCENE_LOOP2 
+		SET_VALUES_SCENE_MSPACMAN:
+			la s0 SCENE_TRANSITION
+			li s1 0xFF009650 
+			addi s3 s3 4
+			add s1 s1 s3
+		PRINT_SCENE_LOOP2:
+			addi t0 zero 16
+			beq t2 t0 END_PRINT_SCENE_LOOP2
+			PRINT_SCENE_LOOP3:
+				addi t0 zero 122
+				beq t1 t0 END_PRINT_SCENE_LOOP3
+				
+					
+				lh t4 0(s0)	# Posição inicial da MsPacman para print
+				sh t4 0(s1)
+			
+				addi s0 s0 2
+				addi s1 s1 2
+				addi t1 t1 2
+				jal zero PRINT_SCENE_LOOP3
+			END_PRINT_SCENE_LOOP3: 
+			addi s1 s1 198		# Quebra de linha
+			add t1 zero zero	# Zera o contador do loop 3
+			addi t2 t2 1
+			jal zero PRINT_SCENE_LOOP2
+		END_PRINT_SCENE_LOOP2:
+		li s1 0xFF009650
+		addi s3 s3 4
+		add s1 s1 s3
+		add t2 zero zero
+		add t1 zero zero
+		addi a7 zero 32		# Sleep para a próxima imagem 
+		addi a0 zero 40
+		ecall
+		addi t3 t3 1
+		jal zero PRINT_SCENE_LOOP
+	END_PRINT_SCENE_LOOP:
+.end_macro
+#}
+
+	PRINT_NEXT_STAGE(BACKGROUND_NEXT_STAGE1_FILE)
+	PRINT_NEXT_STAGE(BACKGROUND_NEXT_STAGE2_FILE)
+	PRINT_NEXT_STAGE(BACKGROUND_NEXT_STAGE3_FILE)
+	PRINT_NEXT_STAGE(BACKGROUND_NEXT_STAGE4_FILE)
+	

@@ -1,0 +1,74 @@
+.data 
+DEATH_MSPACMAN_FILE: .string "MsPacmanDeath.bin"
+
+DEATH_MSPACMAN: .space 1024
+PAC_POSITION: .word 0xFF008000
+
+.text
+#### LOAD MSPACMAN DEATH #### 
+#{
+	li a7,1024
+	la a0, DEATH_MSPACMAN_FILE
+	li a1,0
+	ecall
+
+	li a7,63
+	la a1,DEATH_MSPACMAN
+	li a2,1024
+	ecall
+
+	li a7,57
+	ecall
+#}
+
+
+
+#### PRINT DEAHT ####
+#{
+	add t3 zero zero
+	add t2 zero zero
+	add t1 zero zero
+		
+	PRINT_DEATH_LOOP:
+		addi t0 zero 8
+		beq t3 t0 END_PRINT_DEATH_LOOP
+		addi t0 zero 4
+		rem t4 t3 t0
+		beq t4 zero SET_VALUES_DEATH_MSPACMAN
+		jal zero PRINT_DEATH_LOOP2 
+		SET_VALUES_DEATH_MSPACMAN:
+			la s0 DEATH_MSPACMAN
+			la s1 PAC_POSITION
+			lw s1 0(s1)
+		PRINT_DEATH_LOOP2:
+			addi t0 zero 16
+			beq t2 t0 END_PRINT_DEATH_LOOP2
+			PRINT_DEATH_LOOP3:
+				addi t0 zero 16
+				beq t1 t0 END_PRINT_DEATH_LOOP3
+				
+					
+				lh t4 0(s0)	# Posição inicial da MsPacman para print
+				sh t4 0(s1)
+				
+				addi s0 s0 2
+				addi s1 s1 2
+				addi t1 t1 2
+				jal zero PRINT_DEATH_LOOP3
+			END_PRINT_DEATH_LOOP3: 
+			addi s1 s1 304		# Quebra de linha
+			add t1 zero zero	# Zera o contador do loop 3
+			addi t2 t2 1
+			jal zero PRINT_DEATH_LOOP2
+		END_PRINT_DEATH_LOOP2:
+		la s1 PAC_POSITION
+		lw s1 0(s1)
+		add t2 zero zero
+		add t1 zero zero
+		addi a7 zero 32		# Sleep para a próxima imagem 
+		addi a0 zero 200
+		ecall
+		addi t3 t3 1
+		jal zero PRINT_DEATH_LOOP
+	END_PRINT_DEATH_LOOP:
+#}
