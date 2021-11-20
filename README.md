@@ -2,10 +2,11 @@
 This is the final project for the first semester of Science Computer course. The goal was to develop the game Ms. PacMan with all the features using RARS asssembly.
 All the images were taken from internet or edited/created by the authors.
 
+<p align="center">
 <img src="/images/github/intro.png"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px; align=center" />
-![Intro do jogo](/images/github/intro.png)
+     style="float: left; margin-right: 10px" />  
+</p>
 
 # Dependencies
 To use this program is needed to install Java on your machine. See on https://java.com/en/download/help/download_options.html for instructions for your Operational System.
