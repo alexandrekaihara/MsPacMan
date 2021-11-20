@@ -4,7 +4,7 @@ All the images were taken from internet or edited/created by the authors.
 
 <img src="/images/github/intro.png"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 10px; align=center" />
 ![Intro do jogo](/images/github/intro.png)
 
 # Dependencies
