@@ -9,6 +9,8 @@ All the images were taken from internet or edited/created by the authors.
      style="float: left; margin-right: 10px" />  
 </p>
 
+![myimg](/images/github/intro.png){: height="75px" width="300px" style="float:left; padding-right:10px" }
+
 # Dependencies
 To use this program is needed to install Java on your machine. See on https://java.com/en/download/help/download_options.html for instructions for your Operational System.
 
