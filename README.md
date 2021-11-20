@@ -13,6 +13,7 @@ All the images were taken from internet or edited/created by the authors.
 To use this program is needed to install Java on your machine. See on https://java.com/en/download/help/download_options.html for instructions for your Operational System.
 
 # Usage
+## Execute
 Steps to execute the program:
 - After installing java on your machine, execute by double clicking on Rars10_Custom7.jar;
 - On the top bar, click on "File>Open" and select "main.s";
@@ -31,6 +32,7 @@ Steps to execute the program:
 - Click on the window of the keyboard to be able to receive the keyboard input;
 - Click on the white rectangle where is written "KEYBOARD: Characters typed here are stored to Receiver Data 0xff2000004".
 
+## Adjust screen size
 If the screen is too small, you can change the configurations on Bitmap display doing:
 - Change "Unit Width in Pixels" to 2;
 - Change "Unit Height in Pixels" to 2;
@@ -39,6 +41,7 @@ If the screen is too small, you can change the configurations on Bitmap display 
 - Then click on the corner of the window to expand its size with the mouse;
 - Restart all the steps to execute the program from step 6;
 
+## Keyboard controls
 The commands are:
 - "w" to go up;
 - "s" to go down;
