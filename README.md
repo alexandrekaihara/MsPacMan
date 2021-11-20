@@ -6,7 +6,7 @@ All the images were taken from internet or edited/created by the authors.
 <p align="center">
 <img src="/images/github/intro.png"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px" />  
+     style="float: left; margin-right: 30px; margin-top=30px" />  
 </p>
 
 # Dependencies
@@ -20,6 +20,11 @@ Steps to execute the program:
 - On the new screen click on "Connect to Program";
 - On the top bar, click "Tools>Bitmap Display";
 - On the new screen click on "Connect to Program";
+<p align="center">
+<img src="/images/github/topbar.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 30px; margin-top=30px; margin-bottom=30px" />  
+</p>
 - Under the top bar, click on the 12th square that has a image of a tool to compile the program;
 - Then the 13th box will become green and clickable. Then click on the 13th square;
 - Click on the window of the keyboard to be able to receive the keyboard input;
