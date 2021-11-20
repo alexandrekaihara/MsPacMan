@@ -2,6 +2,7 @@
 This is the final project for the first semester of Science Computer course. The goal was to develop the game Ms. PacMan with all the features using RARS asssembly.
 All the images were taken from internet or edited/created by the authors.
 
+
 <p align="center">
 <img src="/images/github/intro.png"
      alt="Markdown Monster icon"
