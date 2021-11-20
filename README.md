@@ -25,6 +25,7 @@ Steps to execute the program:
      alt="Markdown Monster icon"
      style="float: left; margin-right: 30px; margin-top=30px; margin-bottom=30px" />  
 </p>
+
 - Under the top bar, click on the 12th square that has a image of a tool to compile the program;
 - Then the 13th box will become green and clickable. Then click on the 13th square;
 - Click on the window of the keyboard to be able to receive the keyboard input;
