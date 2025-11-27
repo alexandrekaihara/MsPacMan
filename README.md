@@ -9,6 +9,8 @@ All the images were taken from internet or edited/created by the authors.
      style="float: left; margin-right: 30px; margin-top=30px" />  
 </p>
 
+[Demo Video](https://youtu.be/MNxMigYtn8I)
+
 # Dependencies
 To use this program is needed to install Java on your machine. See on https://java.com/en/download/help/download_options.html for instructions for your Operational System.
 
